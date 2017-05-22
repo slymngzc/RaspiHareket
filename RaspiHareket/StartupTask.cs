@@ -14,6 +14,8 @@ namespace RaspiHareket
 {
     public sealed class StartupTask : IBackgroundTask
     {
+        //Komut Satırı
+
         //400 Milisaniye Olarak Ayarlıyorum************
         const double sec = 600;
         //*********************************************
