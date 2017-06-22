@@ -1,0 +1,3671 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://axaptaws.kipasgroup.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://axaptaws.kipasgroup.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Axapta Web Service</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://axaptaws.kipasgroup.com/">
+      <s:element name="updateGiderPusulasi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Giderler" type="tns:ArrayOfGiderObject" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGiderObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GiderObject" nillable="true" type="tns:GiderObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GiderObject">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AxaptaBusinessObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Kaynak" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Tarih" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TCKimlikNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GiderPusulaNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsinMahiyeti" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Miktar" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Tutar" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Adi" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Soyadi" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Adres" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Plaka" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BrutKilo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FireKilo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="VergiTutari" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RevizeBirimFiyat" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="AxaptaBusinessObject" abstract="true" />
+      <s:complexType name="GiderAxGelenObject">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AxaptaBusinessObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Kaynak" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GiderPusulaNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Sonuc" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="LogObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Kullanici" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BilgisayarAdi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BilgisayarIp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mesaj" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UygulamaAdi" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="updateGiderPusulasiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateGiderPusulasiResult" type="tns:ArrayOfGiderAxGelenObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGiderAxGelenObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GiderAxGelenObject" nillable="true" type="tns:GiderAxGelenObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Kullanici" type="tns:Kullanici" />
+      <s:complexType name="Kullanici">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="_kullaniciAdi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="_sifre" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="updateTest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Kanal" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Sira" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Xml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateTestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getHBParametre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projekodu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="parametrekodu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataareaid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AnahtarAlan1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getHBParametreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getHBParametreResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateHBSiparis">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dimension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataareaid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="kasano" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateHBSiparisResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateHBSiparisResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateHBSiparisKapat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gelenveri" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateHBSiparisKapatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateHBSiparisKapatResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HelloAxapta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HelloAxaptaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloAxaptaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateHBIrsaliye">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Irsaliyeler" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Program" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateHBIrsaliyeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateHBIrsaliyeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteHBIrsaliye">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Irsaliyeler" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteHBIrsaliyeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteHBIrsaliyeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateHBSarf">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sarflar" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Program" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateHBSarfResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateHBSarfResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateHBSatinalma">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Irsaliyeler" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateHBSatinalmaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateHBSatinalmaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateHBTransfer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Transferler" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateHBTransferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateHBTransferResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateHBSatinalmaYrd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dataareaid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dimension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateHBSatinalmaYrdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateHBSatinalmaYrdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateHBSatinalmaYrdKapat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateHBSatinalmaYrdKapatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateHBSatinalmaYrdKapatResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getKgtHBSatinalma">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dataareaid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dimension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getKgtHBSatinalmaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getKgtHBSatinalmaResult" type="tns:ArrayOfHBKgtSatinalma" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfHBKgtSatinalma">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="HBKgtSatinalma" nillable="true" type="tns:HBKgtSatinalma" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HBKgtSatinalma">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AxaptaBusinessObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ISLEM" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TABLO" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DATAAREAID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RECID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ORDERACCOUNT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NAME" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ITEMID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ITEMNAME" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PURCHID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LINENUM" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PURCHSTATUS" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DIMENSION" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PURCHUNIT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="INVENTDIMID" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="updateKgtHBSatinalma">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Satinalmalar" type="tns:ArrayOfHBKgtSatinalma" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateKgtHBSatinalmaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateKgtHBSatinalmaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateKgtHBSatinalmaKapat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sirket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateKgtHBSatinalmaKapatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateKgtHBSatinalmaKapatResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getKPSKagitSatinalma">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dataareaid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getKPSKagitSatinalmaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getKPSKagitSatinalmaResult" type="tns:ArrayOfKCSKantarObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfKCSKantarObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="KCSKantarObject" nillable="true" type="tns:KCSKantarObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KCSKantarObject">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AxaptaBusinessObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ISLEM" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TABLO" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MAINACCID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ADATEREALIZED" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ATIMEREALIZED" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ACCPLATE" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OYPACKINGSLIPDATE" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OYIRSALIYESTR" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OYIRSALIYEINT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ACIKLAMA" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DIMENSION" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ORDERACCOUNT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NAME" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ORDERACCOUNT2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NAME2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ITEMID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ITEMNAME" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DISPATCHEDWEIGHT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EMPTYWEIGHT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NETWEIGHT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DDATEFIRST" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DTIMEFIRST" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DDATEREALIZED" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DTIMEREALIZED" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DATAAREAID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RECID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ACCSTATUS" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PURCHSTATUS" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="INVENTDIMID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PURCHID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LINENUM" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PURCHUNIT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="REMAINPURCHPHYSICAL" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PASIF" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="updateKPSKagitSatinalma">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MalKabuller" type="tns:ArrayOfKCSKantarObject" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateKPSKagitSatinalmaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateKPSKagitSatinalmaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SirketAc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sirket" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SirketAcResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SirketAcResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateEkspertiz">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_Xml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateEkspertizResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateEkspertizResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateGazBetonYuklemeOnayi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_Xml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateGazBetonYuklemeOnayiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateGazBetonYuklemeOnayiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="newRollProductionOperation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rollProduction" type="tns:ArrayOfRollProductionObject" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+            <s:element minOccurs="1" maxOccurs="1" name="messageid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRollProductionObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RollProductionObject" nillable="true" type="tns:RollProductionObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RollProductionObject">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AxaptaBusinessObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="RollId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ProductionDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OrderNumberLine" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RunNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="JumboId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Grade" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Grammage" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Weight" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Quality" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Warehouse" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Location" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="newRollProductionOperationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newRollProductionOperationResult" type="tns:AxaptaSonucObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AxaptaSonucObject">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AxaptaBusinessObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MsgId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MsgResult" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MsgDesc" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ShipmentExecutedOperation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="shipmentExecutedXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+            <s:element minOccurs="1" maxOccurs="1" name="messageid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ShipmentExecutedOperationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ShipmentExecutedOperationResult" type="tns:AxaptaSonucObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplenishmentOrderLineOperation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+            <s:element minOccurs="0" maxOccurs="1" name="replenishmentOrderLine" type="tns:ReplenishmentOrderLineObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReplenishmentOrderLineObject">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AxaptaBusinessObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="OrderMakeNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OrderProCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="OrderSalvol" type="s:float" />
+              <s:element minOccurs="0" maxOccurs="1" name="OrderSaluni" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="OrderEntDate" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="Grade" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="BasisWeight" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Caliper" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Width" type="s:float" />
+              <s:element minOccurs="1" maxOccurs="1" name="Diameter" type="s:float" />
+              <s:element minOccurs="1" maxOccurs="1" name="Length" type="s:float" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ReplenishmentOrderLineOperationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReplenishmentOrderLineOperationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeRollCodeOperation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+            <s:element minOccurs="0" maxOccurs="1" name="changeRollCodeXml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="messageid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeRollCodeOperationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangeRollCodeOperationResult" type="tns:AxaptaSonucObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScrapRollOperation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+            <s:element minOccurs="0" maxOccurs="1" name="scrapRollXml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="messageid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScrapRollOperationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ScrapRollOperationResult" type="tns:AxaptaSonucObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StoreRollOperation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+            <s:element minOccurs="0" maxOccurs="1" name="storeRollXml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="messageid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StoreRollOperationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StoreRollOperationResult" type="tns:AxaptaSonucObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScrapJumboOperation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+            <s:element minOccurs="0" maxOccurs="1" name="scrapJumboXml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="messageid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScrapJumboOperationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ScrapJumboOperationResult" type="tns:AxaptaSonucObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WarehouseRequestOperation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+            <s:element minOccurs="0" maxOccurs="1" name="warehouseRequestXml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="messageid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WarehouseRequestOperationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WarehouseRequestOperationResult" type="tns:AxaptaSonucObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WarehouseRequestRemovedOperation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+            <s:element minOccurs="0" maxOccurs="1" name="warehouseRequestCancelXml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="messageid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WarehouseRequestRemovedOperationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WarehouseRequestRemovedOperationResult" type="tns:AxaptaSonucObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListenMessageStsOperation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListenMessageStsOperationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListenMessageStsOperationResult" type="tns:AxaptaSonucObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListenOutgoingOperation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListenOutgoingOperationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListenOutgoingOperationResult" type="tns:AxaptaSonucObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListenIncomingOperation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListenIncomingOperationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListenIncomingOperationResult" type="tns:AxaptaSonucObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuantityChangeOperation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+            <s:element minOccurs="0" maxOccurs="1" name="quantityChangeXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuantityChangeOperationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QuantityChangeOperationResult" type="tns:AxaptaSonucObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QualityCondOperation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+            <s:element minOccurs="0" maxOccurs="1" name="qualityCondXml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="messageid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QualityCondOperationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QualityCondOperationResult" type="tns:AxaptaSonucObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TrendValueOperation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+            <s:element minOccurs="1" maxOccurs="1" name="trendid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="startdate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="enddate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxrows" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="islem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TrendValueOperationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TrendValueOperationResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setKgtTransfer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_xml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setKgtTransferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="setKgtTransferResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateTaseronOnay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_Xml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateTaseronOnayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateTaseronOnayResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getEFaturalarUBL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AxParametreleri" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Log" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getEFaturalarUBLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getEFaturalarUBLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getEdefter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AxParametreleri" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Log" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getEdefterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getEdefterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getEArsiv">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AxParametreleri" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Log" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getEArsivResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getEArsivResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCekler">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sirket" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Statu" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Log" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCeklerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCeklerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setCekStatu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sirket" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Statu" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cekler" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Log" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setCekStatuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="setCekStatuResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getKCSMobilProfil">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sirket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KullaniciAdi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KullaniciSifresi" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Unuttum" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Log" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getKCSMobilProfilResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getKCSMobilProfilResult" type="tns:ArrayOfKCSMobilSatisObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfKCSMobilSatisObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="KCSMobilSatisObject" nillable="true" type="tns:KCSMobilSatisObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KCSMobilSatisObject">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AxaptaBusinessObject">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountNum" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Bakiye" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="LastLoginDateTime" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="Roles" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="getKCSMobilSiparis">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sirket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CariKodu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Log" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getKCSMobilSiparisResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getKCSMobilSiparisResult" type="tns:ArrayOfKCSMobilSatisSipObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfKCSMobilSatisSipObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="KCSMobilSatisSipObject" nillable="true" type="tns:KCSMobilSatisSipObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KCSMobilSatisSipObject">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AxaptaBusinessObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="InventTransId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustAccount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="InvoiceAccount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SalesId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LIneNum" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ItemId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ItemName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="SalesQty" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="SalesUnIt" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DelIveredInTotal" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="RemaInSalesPhysIcal" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AcikMiktar" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="KalanMiktar" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="TeslimAdresi" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Statu" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Urun" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="getKCSMobilYukleme">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sirket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SalesId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InventTransId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GVHSalesShIpmentId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DIspatchId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Log" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getKCSMobilYuklemeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getKCSMobilYuklemeResult" type="tns:ArrayOfKCSMobilSatisYukObjects" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfKCSMobilSatisYukObjects">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="KCSMobilSatisYukObjects" nillable="true" type="tns:KCSMobilSatisYukObjects" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KCSMobilSatisYukObjects">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DIspatchId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DIspatchDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrePackIngSlIpId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TruckPlate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmptyWeIght" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DIspatchedWeIght" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="NetWeIght" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="QtyUnIt1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DIspatchStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LIneNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="QtyInTons" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="GVHSalesShIpmentId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Palet" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getKCSMobilGazYukleme">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sirket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SalesId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Log" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getKCSMobilGazYuklemeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getKCSMobilGazYuklemeResult" type="tns:ArrayOfKCSMobilSatisGazYukObjects" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfKCSMobilSatisGazYukObjects">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="KCSMobilSatisGazYukObjects" nillable="true" type="tns:KCSMobilSatisGazYukObjects" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KCSMobilSatisGazYukObjects">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SalesShIpmentId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SalesId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DIspatchDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrePackIngSlIpId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TruckPlate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PackingSlIpId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DIspatchStatus" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="setKCSMobilYukleme">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sirket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Xml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Log" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setKCSMobilYuklemeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setKCSMobilYuklemeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setKCSMobilGazYukleme">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sirket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Xml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Log" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setKCSMobilGazYuklemeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setKCSMobilGazYuklemeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setKCSMobilSifre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sirket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="YeniSifre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Log" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setKCSMobilSifreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="setKCSMobilSifreResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setKCSMobilLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sirket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Log" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setKCSMobilLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setKCSMobilLogResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setTahsilat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="krediKartOdemeler" type="tns:ArrayOfCreditCardPaymentObject" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCreditCardPaymentObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CreditCardPaymentObject" nillable="true" type="tns:CreditCardPaymentObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CreditCardPaymentObject">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AxaptaBusinessObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MovementCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankaHesapNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MusteriCariKod" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Tutar" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ParaBirimi" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Aciklama" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Tarih" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerMail" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UrunGrubu" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="setTahsilatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setTahsilatResult" type="tns:ArrayOfPaymentStatusObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPaymentStatusObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PaymentStatusObject" nillable="true" type="tns:PaymentStatusObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PaymentStatusObject">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AxaptaBusinessObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MovementCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerMail" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="getBINListesi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_Sirket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_KartNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBINListesiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBINListesiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAxBakiyeler">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_Sirket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_AccountNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarihce" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAxBakiyelerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAxBakiyelerResult" type="tns:ArrayOfKCSMobilSatisBakiyelerObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfKCSMobilSatisBakiyelerObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="KCSMobilSatisBakiyelerObject" nillable="true" type="tns:KCSMobilSatisBakiyelerObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KCSMobilSatisBakiyelerObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Urun" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bakiye" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getIrsaliyeRaporu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_Sirket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_AccountNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BaslangicTarihi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BitisTarihi" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailGonder" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToMailList" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToBcclList" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getIrsaliyeRaporuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getIrsaliyeRaporuResult" type="tns:ArrayOfKCSMobilSatisIrsaliyeRaporObjects" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfKCSMobilSatisIrsaliyeRaporObjects">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="KCSMobilSatisIrsaliyeRaporObjects" nillable="true" type="tns:KCSMobilSatisIrsaliyeRaporObjects" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KCSMobilSatisIrsaliyeRaporObjects">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IrsTarihi" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="MusKod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Musteri" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SiparisNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaddeKodu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaddeAdi" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IrsMik" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Birim" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IrsNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Plaka" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TeslimAdresi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Amac" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NetMik" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getMusteriHareket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_Sirket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_AccountNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BaslangicTarihi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BitisTarihi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FisNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToMailList" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToBcclList" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMusteriHareketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMusteriHareketResult" type="tns:ArrayOfKCSMobilSatisMusteriHareketleri" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfKCSMobilSatisMusteriHareketleri">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="KCSMobilSatisMusteriHareketleri" nillable="true" type="tns:KCSMobilSatisMusteriHareketleri" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KCSMobilSatisMusteriHareketleri">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MusKod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Musteri" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="HareketTarihi" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="FisNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FaturaNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Aciklama" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BorcTutar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AlacakTutar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pb" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="setKekYukseklik">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Lokasyon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VeriNoktasi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Yedek" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_min" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="_max" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="_ortalama" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="_gozlemsaati" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_kaliparabano" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Log" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setKekYukseklikResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setKekYukseklikResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setUzaklik">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_Uzaklik" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setUzaklikResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setUzaklikResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUretimIsEmri">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UretimEmri" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="log" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUretimIsEmriResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUretimIsEmriResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUretimSeriNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SeriNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="log" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUretimSeriNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUretimSeriNoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BobinTransferSarfet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_XMl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="log" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BobinTransferSarfetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BobinTransferSarfetResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UretimTakipBaslangicveBitis">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_XMl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="log" type="tns:LogObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UretimTakipBaslangicveBitisResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UretimTakipBaslangicveBitisResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AmbalajBarkodSatisSevkiyat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_XMl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AmbalajBarkodSatisSevkiyatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AmbalajBarkodSatisSevkiyatResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BarkodPaletIslemleri">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_XMl" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="islem" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BarkodPaletIslemleriResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BarkodPaletIslemleriResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DovizKurlari">
+        <s:complexType />
+      </s:element>
+      <s:element name="DovizKurlariResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DovizKurlariResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="updateGiderPusulasiSoapIn">
+    <wsdl:part name="parameters" element="tns:updateGiderPusulasi" />
+  </wsdl:message>
+  <wsdl:message name="updateGiderPusulasiSoapOut">
+    <wsdl:part name="parameters" element="tns:updateGiderPusulasiResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateGiderPusulasiKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="updateTestSoapIn">
+    <wsdl:part name="parameters" element="tns:updateTest" />
+  </wsdl:message>
+  <wsdl:message name="updateTestSoapOut">
+    <wsdl:part name="parameters" element="tns:updateTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateTestKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="getHBParametreSoapIn">
+    <wsdl:part name="parameters" element="tns:getHBParametre" />
+  </wsdl:message>
+  <wsdl:message name="getHBParametreSoapOut">
+    <wsdl:part name="parameters" element="tns:getHBParametreResponse" />
+  </wsdl:message>
+  <wsdl:message name="getHBParametreKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="updateHBSiparisSoapIn">
+    <wsdl:part name="parameters" element="tns:updateHBSiparis" />
+  </wsdl:message>
+  <wsdl:message name="updateHBSiparisSoapOut">
+    <wsdl:part name="parameters" element="tns:updateHBSiparisResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateHBSiparisKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="updateHBSiparisKapatSoapIn">
+    <wsdl:part name="parameters" element="tns:updateHBSiparisKapat" />
+  </wsdl:message>
+  <wsdl:message name="updateHBSiparisKapatSoapOut">
+    <wsdl:part name="parameters" element="tns:updateHBSiparisKapatResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateHBSiparisKapatKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="HelloAxaptaSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloAxapta" />
+  </wsdl:message>
+  <wsdl:message name="HelloAxaptaSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloAxaptaResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloAxaptaKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="updateHBIrsaliyeSoapIn">
+    <wsdl:part name="parameters" element="tns:updateHBIrsaliye" />
+  </wsdl:message>
+  <wsdl:message name="updateHBIrsaliyeSoapOut">
+    <wsdl:part name="parameters" element="tns:updateHBIrsaliyeResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateHBIrsaliyeKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="deleteHBIrsaliyeSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteHBIrsaliye" />
+  </wsdl:message>
+  <wsdl:message name="deleteHBIrsaliyeSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteHBIrsaliyeResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteHBIrsaliyeKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="updateHBSarfSoapIn">
+    <wsdl:part name="parameters" element="tns:updateHBSarf" />
+  </wsdl:message>
+  <wsdl:message name="updateHBSarfSoapOut">
+    <wsdl:part name="parameters" element="tns:updateHBSarfResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateHBSarfKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="updateHBSatinalmaSoapIn">
+    <wsdl:part name="parameters" element="tns:updateHBSatinalma" />
+  </wsdl:message>
+  <wsdl:message name="updateHBSatinalmaSoapOut">
+    <wsdl:part name="parameters" element="tns:updateHBSatinalmaResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateHBSatinalmaKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="updateHBTransferSoapIn">
+    <wsdl:part name="parameters" element="tns:updateHBTransfer" />
+  </wsdl:message>
+  <wsdl:message name="updateHBTransferSoapOut">
+    <wsdl:part name="parameters" element="tns:updateHBTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateHBTransferKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="updateHBSatinalmaYrdSoapIn">
+    <wsdl:part name="parameters" element="tns:updateHBSatinalmaYrd" />
+  </wsdl:message>
+  <wsdl:message name="updateHBSatinalmaYrdSoapOut">
+    <wsdl:part name="parameters" element="tns:updateHBSatinalmaYrdResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateHBSatinalmaYrdKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="updateHBSatinalmaYrdKapatSoapIn">
+    <wsdl:part name="parameters" element="tns:updateHBSatinalmaYrdKapat" />
+  </wsdl:message>
+  <wsdl:message name="updateHBSatinalmaYrdKapatSoapOut">
+    <wsdl:part name="parameters" element="tns:updateHBSatinalmaYrdKapatResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateHBSatinalmaYrdKapatKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="getKgtHBSatinalmaSoapIn">
+    <wsdl:part name="parameters" element="tns:getKgtHBSatinalma" />
+  </wsdl:message>
+  <wsdl:message name="getKgtHBSatinalmaSoapOut">
+    <wsdl:part name="parameters" element="tns:getKgtHBSatinalmaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getKgtHBSatinalmaKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="updateKgtHBSatinalmaSoapIn">
+    <wsdl:part name="parameters" element="tns:updateKgtHBSatinalma" />
+  </wsdl:message>
+  <wsdl:message name="updateKgtHBSatinalmaSoapOut">
+    <wsdl:part name="parameters" element="tns:updateKgtHBSatinalmaResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateKgtHBSatinalmaKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="updateKgtHBSatinalmaKapatSoapIn">
+    <wsdl:part name="parameters" element="tns:updateKgtHBSatinalmaKapat" />
+  </wsdl:message>
+  <wsdl:message name="updateKgtHBSatinalmaKapatSoapOut">
+    <wsdl:part name="parameters" element="tns:updateKgtHBSatinalmaKapatResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateKgtHBSatinalmaKapatKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="getKPSKagitSatinalmaSoapIn">
+    <wsdl:part name="parameters" element="tns:getKPSKagitSatinalma" />
+  </wsdl:message>
+  <wsdl:message name="getKPSKagitSatinalmaSoapOut">
+    <wsdl:part name="parameters" element="tns:getKPSKagitSatinalmaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getKPSKagitSatinalmaKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="updateKPSKagitSatinalmaSoapIn">
+    <wsdl:part name="parameters" element="tns:updateKPSKagitSatinalma" />
+  </wsdl:message>
+  <wsdl:message name="updateKPSKagitSatinalmaSoapOut">
+    <wsdl:part name="parameters" element="tns:updateKPSKagitSatinalmaResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateKPSKagitSatinalmaKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="SirketAcSoapIn">
+    <wsdl:part name="parameters" element="tns:SirketAc" />
+  </wsdl:message>
+  <wsdl:message name="SirketAcSoapOut">
+    <wsdl:part name="parameters" element="tns:SirketAcResponse" />
+  </wsdl:message>
+  <wsdl:message name="SirketAcKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="updateEkspertizSoapIn">
+    <wsdl:part name="parameters" element="tns:updateEkspertiz" />
+  </wsdl:message>
+  <wsdl:message name="updateEkspertizSoapOut">
+    <wsdl:part name="parameters" element="tns:updateEkspertizResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateEkspertizKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="updateGazBetonYuklemeOnayiSoapIn">
+    <wsdl:part name="parameters" element="tns:updateGazBetonYuklemeOnayi" />
+  </wsdl:message>
+  <wsdl:message name="updateGazBetonYuklemeOnayiSoapOut">
+    <wsdl:part name="parameters" element="tns:updateGazBetonYuklemeOnayiResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateGazBetonYuklemeOnayiKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="newRollProductionOperationSoapIn">
+    <wsdl:part name="parameters" element="tns:newRollProductionOperation" />
+  </wsdl:message>
+  <wsdl:message name="newRollProductionOperationSoapOut">
+    <wsdl:part name="parameters" element="tns:newRollProductionOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="newRollProductionOperationKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="ShipmentExecutedOperationSoapIn">
+    <wsdl:part name="parameters" element="tns:ShipmentExecutedOperation" />
+  </wsdl:message>
+  <wsdl:message name="ShipmentExecutedOperationSoapOut">
+    <wsdl:part name="parameters" element="tns:ShipmentExecutedOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ShipmentExecutedOperationKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="ReplenishmentOrderLineOperationSoapIn">
+    <wsdl:part name="parameters" element="tns:ReplenishmentOrderLineOperation" />
+  </wsdl:message>
+  <wsdl:message name="ReplenishmentOrderLineOperationSoapOut">
+    <wsdl:part name="parameters" element="tns:ReplenishmentOrderLineOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReplenishmentOrderLineOperationKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="ChangeRollCodeOperationSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeRollCodeOperation" />
+  </wsdl:message>
+  <wsdl:message name="ChangeRollCodeOperationSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeRollCodeOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeRollCodeOperationKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="ScrapRollOperationSoapIn">
+    <wsdl:part name="parameters" element="tns:ScrapRollOperation" />
+  </wsdl:message>
+  <wsdl:message name="ScrapRollOperationSoapOut">
+    <wsdl:part name="parameters" element="tns:ScrapRollOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ScrapRollOperationKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="StoreRollOperationSoapIn">
+    <wsdl:part name="parameters" element="tns:StoreRollOperation" />
+  </wsdl:message>
+  <wsdl:message name="StoreRollOperationSoapOut">
+    <wsdl:part name="parameters" element="tns:StoreRollOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="StoreRollOperationKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="ScrapJumboOperationSoapIn">
+    <wsdl:part name="parameters" element="tns:ScrapJumboOperation" />
+  </wsdl:message>
+  <wsdl:message name="ScrapJumboOperationSoapOut">
+    <wsdl:part name="parameters" element="tns:ScrapJumboOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ScrapJumboOperationKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="WarehouseRequestOperationSoapIn">
+    <wsdl:part name="parameters" element="tns:WarehouseRequestOperation" />
+  </wsdl:message>
+  <wsdl:message name="WarehouseRequestOperationSoapOut">
+    <wsdl:part name="parameters" element="tns:WarehouseRequestOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="WarehouseRequestOperationKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="WarehouseRequestRemovedOperationSoapIn">
+    <wsdl:part name="parameters" element="tns:WarehouseRequestRemovedOperation" />
+  </wsdl:message>
+  <wsdl:message name="WarehouseRequestRemovedOperationSoapOut">
+    <wsdl:part name="parameters" element="tns:WarehouseRequestRemovedOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="WarehouseRequestRemovedOperationKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="ListenMessageStsOperationSoapIn">
+    <wsdl:part name="parameters" element="tns:ListenMessageStsOperation" />
+  </wsdl:message>
+  <wsdl:message name="ListenMessageStsOperationSoapOut">
+    <wsdl:part name="parameters" element="tns:ListenMessageStsOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListenMessageStsOperationKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="ListenOutgoingOperationSoapIn">
+    <wsdl:part name="parameters" element="tns:ListenOutgoingOperation" />
+  </wsdl:message>
+  <wsdl:message name="ListenOutgoingOperationSoapOut">
+    <wsdl:part name="parameters" element="tns:ListenOutgoingOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListenOutgoingOperationKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="ListenIncomingOperationSoapIn">
+    <wsdl:part name="parameters" element="tns:ListenIncomingOperation" />
+  </wsdl:message>
+  <wsdl:message name="ListenIncomingOperationSoapOut">
+    <wsdl:part name="parameters" element="tns:ListenIncomingOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListenIncomingOperationKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="QuantityChangeOperationSoapIn">
+    <wsdl:part name="parameters" element="tns:QuantityChangeOperation" />
+  </wsdl:message>
+  <wsdl:message name="QuantityChangeOperationSoapOut">
+    <wsdl:part name="parameters" element="tns:QuantityChangeOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="QuantityChangeOperationKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="QualityCondOperationSoapIn">
+    <wsdl:part name="parameters" element="tns:QualityCondOperation" />
+  </wsdl:message>
+  <wsdl:message name="QualityCondOperationSoapOut">
+    <wsdl:part name="parameters" element="tns:QualityCondOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="QualityCondOperationKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="TrendValueOperationSoapIn">
+    <wsdl:part name="parameters" element="tns:TrendValueOperation" />
+  </wsdl:message>
+  <wsdl:message name="TrendValueOperationSoapOut">
+    <wsdl:part name="parameters" element="tns:TrendValueOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrendValueOperationKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="setKgtTransferSoapIn">
+    <wsdl:part name="parameters" element="tns:setKgtTransfer" />
+  </wsdl:message>
+  <wsdl:message name="setKgtTransferSoapOut">
+    <wsdl:part name="parameters" element="tns:setKgtTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="setKgtTransferKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="updateTaseronOnaySoapIn">
+    <wsdl:part name="parameters" element="tns:updateTaseronOnay" />
+  </wsdl:message>
+  <wsdl:message name="updateTaseronOnaySoapOut">
+    <wsdl:part name="parameters" element="tns:updateTaseronOnayResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateTaseronOnayKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="getEFaturalarUBLSoapIn">
+    <wsdl:part name="parameters" element="tns:getEFaturalarUBL" />
+  </wsdl:message>
+  <wsdl:message name="getEFaturalarUBLSoapOut">
+    <wsdl:part name="parameters" element="tns:getEFaturalarUBLResponse" />
+  </wsdl:message>
+  <wsdl:message name="getEFaturalarUBLKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="getEdefterSoapIn">
+    <wsdl:part name="parameters" element="tns:getEdefter" />
+  </wsdl:message>
+  <wsdl:message name="getEdefterSoapOut">
+    <wsdl:part name="parameters" element="tns:getEdefterResponse" />
+  </wsdl:message>
+  <wsdl:message name="getEdefterKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="getEArsivSoapIn">
+    <wsdl:part name="parameters" element="tns:getEArsiv" />
+  </wsdl:message>
+  <wsdl:message name="getEArsivSoapOut">
+    <wsdl:part name="parameters" element="tns:getEArsivResponse" />
+  </wsdl:message>
+  <wsdl:message name="getEArsivKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="getCeklerSoapIn">
+    <wsdl:part name="parameters" element="tns:getCekler" />
+  </wsdl:message>
+  <wsdl:message name="getCeklerSoapOut">
+    <wsdl:part name="parameters" element="tns:getCeklerResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCeklerKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="setCekStatuSoapIn">
+    <wsdl:part name="parameters" element="tns:setCekStatu" />
+  </wsdl:message>
+  <wsdl:message name="setCekStatuSoapOut">
+    <wsdl:part name="parameters" element="tns:setCekStatuResponse" />
+  </wsdl:message>
+  <wsdl:message name="setCekStatuKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="getKCSMobilProfilSoapIn">
+    <wsdl:part name="parameters" element="tns:getKCSMobilProfil" />
+  </wsdl:message>
+  <wsdl:message name="getKCSMobilProfilSoapOut">
+    <wsdl:part name="parameters" element="tns:getKCSMobilProfilResponse" />
+  </wsdl:message>
+  <wsdl:message name="getKCSMobilProfilKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="getKCSMobilSiparisSoapIn">
+    <wsdl:part name="parameters" element="tns:getKCSMobilSiparis" />
+  </wsdl:message>
+  <wsdl:message name="getKCSMobilSiparisSoapOut">
+    <wsdl:part name="parameters" element="tns:getKCSMobilSiparisResponse" />
+  </wsdl:message>
+  <wsdl:message name="getKCSMobilSiparisKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="getKCSMobilYuklemeSoapIn">
+    <wsdl:part name="parameters" element="tns:getKCSMobilYukleme" />
+  </wsdl:message>
+  <wsdl:message name="getKCSMobilYuklemeSoapOut">
+    <wsdl:part name="parameters" element="tns:getKCSMobilYuklemeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getKCSMobilYuklemeKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="getKCSMobilGazYuklemeSoapIn">
+    <wsdl:part name="parameters" element="tns:getKCSMobilGazYukleme" />
+  </wsdl:message>
+  <wsdl:message name="getKCSMobilGazYuklemeSoapOut">
+    <wsdl:part name="parameters" element="tns:getKCSMobilGazYuklemeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getKCSMobilGazYuklemeKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="setKCSMobilYuklemeSoapIn">
+    <wsdl:part name="parameters" element="tns:setKCSMobilYukleme" />
+  </wsdl:message>
+  <wsdl:message name="setKCSMobilYuklemeSoapOut">
+    <wsdl:part name="parameters" element="tns:setKCSMobilYuklemeResponse" />
+  </wsdl:message>
+  <wsdl:message name="setKCSMobilYuklemeKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="setKCSMobilGazYuklemeSoapIn">
+    <wsdl:part name="parameters" element="tns:setKCSMobilGazYukleme" />
+  </wsdl:message>
+  <wsdl:message name="setKCSMobilGazYuklemeSoapOut">
+    <wsdl:part name="parameters" element="tns:setKCSMobilGazYuklemeResponse" />
+  </wsdl:message>
+  <wsdl:message name="setKCSMobilGazYuklemeKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="setKCSMobilSifreSoapIn">
+    <wsdl:part name="parameters" element="tns:setKCSMobilSifre" />
+  </wsdl:message>
+  <wsdl:message name="setKCSMobilSifreSoapOut">
+    <wsdl:part name="parameters" element="tns:setKCSMobilSifreResponse" />
+  </wsdl:message>
+  <wsdl:message name="setKCSMobilSifreKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="setKCSMobilLogSoapIn">
+    <wsdl:part name="parameters" element="tns:setKCSMobilLog" />
+  </wsdl:message>
+  <wsdl:message name="setKCSMobilLogSoapOut">
+    <wsdl:part name="parameters" element="tns:setKCSMobilLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="setKCSMobilLogKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="setTahsilatSoapIn">
+    <wsdl:part name="parameters" element="tns:setTahsilat" />
+  </wsdl:message>
+  <wsdl:message name="setTahsilatSoapOut">
+    <wsdl:part name="parameters" element="tns:setTahsilatResponse" />
+  </wsdl:message>
+  <wsdl:message name="setTahsilatKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="getBINListesiSoapIn">
+    <wsdl:part name="parameters" element="tns:getBINListesi" />
+  </wsdl:message>
+  <wsdl:message name="getBINListesiSoapOut">
+    <wsdl:part name="parameters" element="tns:getBINListesiResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBINListesiKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="getAxBakiyelerSoapIn">
+    <wsdl:part name="parameters" element="tns:getAxBakiyeler" />
+  </wsdl:message>
+  <wsdl:message name="getAxBakiyelerSoapOut">
+    <wsdl:part name="parameters" element="tns:getAxBakiyelerResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAxBakiyelerKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="getIrsaliyeRaporuSoapIn">
+    <wsdl:part name="parameters" element="tns:getIrsaliyeRaporu" />
+  </wsdl:message>
+  <wsdl:message name="getIrsaliyeRaporuSoapOut">
+    <wsdl:part name="parameters" element="tns:getIrsaliyeRaporuResponse" />
+  </wsdl:message>
+  <wsdl:message name="getIrsaliyeRaporuKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="getMusteriHareketSoapIn">
+    <wsdl:part name="parameters" element="tns:getMusteriHareket" />
+  </wsdl:message>
+  <wsdl:message name="getMusteriHareketSoapOut">
+    <wsdl:part name="parameters" element="tns:getMusteriHareketResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMusteriHareketKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="setKekYukseklikSoapIn">
+    <wsdl:part name="parameters" element="tns:setKekYukseklik" />
+  </wsdl:message>
+  <wsdl:message name="setKekYukseklikSoapOut">
+    <wsdl:part name="parameters" element="tns:setKekYukseklikResponse" />
+  </wsdl:message>
+  <wsdl:message name="setKekYukseklikKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="setUzaklikSoapIn">
+    <wsdl:part name="parameters" element="tns:setUzaklik" />
+  </wsdl:message>
+  <wsdl:message name="setUzaklikSoapOut">
+    <wsdl:part name="parameters" element="tns:setUzaklikResponse" />
+  </wsdl:message>
+  <wsdl:message name="setUzaklikKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="getUretimIsEmriSoapIn">
+    <wsdl:part name="parameters" element="tns:getUretimIsEmri" />
+  </wsdl:message>
+  <wsdl:message name="getUretimIsEmriSoapOut">
+    <wsdl:part name="parameters" element="tns:getUretimIsEmriResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUretimIsEmriKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="getUretimSeriNoSoapIn">
+    <wsdl:part name="parameters" element="tns:getUretimSeriNo" />
+  </wsdl:message>
+  <wsdl:message name="getUretimSeriNoSoapOut">
+    <wsdl:part name="parameters" element="tns:getUretimSeriNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUretimSeriNoKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="BobinTransferSarfetSoapIn">
+    <wsdl:part name="parameters" element="tns:BobinTransferSarfet" />
+  </wsdl:message>
+  <wsdl:message name="BobinTransferSarfetSoapOut">
+    <wsdl:part name="parameters" element="tns:BobinTransferSarfetResponse" />
+  </wsdl:message>
+  <wsdl:message name="BobinTransferSarfetKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="UretimTakipBaslangicveBitisSoapIn">
+    <wsdl:part name="parameters" element="tns:UretimTakipBaslangicveBitis" />
+  </wsdl:message>
+  <wsdl:message name="UretimTakipBaslangicveBitisSoapOut">
+    <wsdl:part name="parameters" element="tns:UretimTakipBaslangicveBitisResponse" />
+  </wsdl:message>
+  <wsdl:message name="UretimTakipBaslangicveBitisKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="AmbalajBarkodSatisSevkiyatSoapIn">
+    <wsdl:part name="parameters" element="tns:AmbalajBarkodSatisSevkiyat" />
+  </wsdl:message>
+  <wsdl:message name="AmbalajBarkodSatisSevkiyatSoapOut">
+    <wsdl:part name="parameters" element="tns:AmbalajBarkodSatisSevkiyatResponse" />
+  </wsdl:message>
+  <wsdl:message name="AmbalajBarkodSatisSevkiyatKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="BarkodPaletIslemleriSoapIn">
+    <wsdl:part name="parameters" element="tns:BarkodPaletIslemleri" />
+  </wsdl:message>
+  <wsdl:message name="BarkodPaletIslemleriSoapOut">
+    <wsdl:part name="parameters" element="tns:BarkodPaletIslemleriResponse" />
+  </wsdl:message>
+  <wsdl:message name="BarkodPaletIslemleriKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:message name="DovizKurlariSoapIn">
+    <wsdl:part name="parameters" element="tns:DovizKurlari" />
+  </wsdl:message>
+  <wsdl:message name="DovizKurlariSoapOut">
+    <wsdl:part name="parameters" element="tns:DovizKurlariResponse" />
+  </wsdl:message>
+  <wsdl:message name="DovizKurlariKullanici">
+    <wsdl:part name="Kullanici" element="tns:Kullanici" />
+  </wsdl:message>
+  <wsdl:portType name="AxaptaWSSoap">
+    <wsdl:operation name="updateGiderPusulasi">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gider Pusulası insert islemleri</wsdl:documentation>
+      <wsdl:input message="tns:updateGiderPusulasiSoapIn" />
+      <wsdl:output message="tns:updateGiderPusulasiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateTest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Paralel veri gönderimi için test web metodu</wsdl:documentation>
+      <wsdl:input message="tns:updateTestSoapIn" />
+      <wsdl:output message="tns:updateTestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getHBParametre">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Hazır beton Parametrelerini Alan metod</wsdl:documentation>
+      <wsdl:input message="tns:getHBParametreSoapIn" />
+      <wsdl:output message="tns:getHBParametreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateHBSiparis">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Hazır beton siparis islemleri program=T,V,G.. dimension=ANTEP,MARAS4... dataareaid=kcs...</wsdl:documentation>
+      <wsdl:input message="tns:updateHBSiparisSoapIn" />
+      <wsdl:output message="tns:updateHBSiparisSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateHBSiparisKapat">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Hazır beton siparis kapatma</wsdl:documentation>
+      <wsdl:input message="tns:updateHBSiparisKapatSoapIn" />
+      <wsdl:output message="tns:updateHBSiparisKapatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloAxapta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Hello Axapta</wsdl:documentation>
+      <wsdl:input message="tns:HelloAxaptaSoapIn" />
+      <wsdl:output message="tns:HelloAxaptaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateHBIrsaliye">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Hazır beton satis irsaliyeleri ekleme islemi</wsdl:documentation>
+      <wsdl:input message="tns:updateHBIrsaliyeSoapIn" />
+      <wsdl:output message="tns:updateHBIrsaliyeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteHBIrsaliye">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Hazır beton satis irsaliyeleri silme</wsdl:documentation>
+      <wsdl:input message="tns:deleteHBIrsaliyeSoapIn" />
+      <wsdl:output message="tns:deleteHBIrsaliyeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateHBSarf">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Hazır beton sarfları</wsdl:documentation>
+      <wsdl:input message="tns:updateHBSarfSoapIn" />
+      <wsdl:output message="tns:updateHBSarfSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateHBSatinalma">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Hazır beton satınalma irsaliyeleri ekleme işlemi</wsdl:documentation>
+      <wsdl:input message="tns:updateHBSatinalmaSoapIn" />
+      <wsdl:output message="tns:updateHBSatinalmaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateHBTransfer">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Hazır beton transfer işlemleri Axaptaya alır.</wsdl:documentation>
+      <wsdl:input message="tns:updateHBTransferSoapIn" />
+      <wsdl:output message="tns:updateHBTransferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateHBSatinalmaYrd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Hazır beton satınalma için yardımcı bilgiler</wsdl:documentation>
+      <wsdl:input message="tns:updateHBSatinalmaYrdSoapIn" />
+      <wsdl:output message="tns:updateHBSatinalmaYrdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateHBSatinalmaYrdKapat">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Hazır beton satınalma için yardımcı bilgileri kapatma</wsdl:documentation>
+      <wsdl:input message="tns:updateHBSatinalmaYrdKapatSoapIn" />
+      <wsdl:output message="tns:updateHBSatinalmaYrdKapatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getKgtHBSatinalma">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Kağıt Hazır beton için satınalma siparişlerini alır</wsdl:documentation>
+      <wsdl:input message="tns:getKgtHBSatinalmaSoapIn" />
+      <wsdl:output message="tns:getKgtHBSatinalmaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateKgtHBSatinalma">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Kağıt Hazır beton için satınalma siparişlerini hedef şirkete kaydeder.</wsdl:documentation>
+      <wsdl:input message="tns:updateKgtHBSatinalmaSoapIn" />
+      <wsdl:output message="tns:updateKgtHBSatinalmaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateKgtHBSatinalmaKapat">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Kağıt Hazır beton için satınalma siparişlerini sonuçlarını işaretler</wsdl:documentation>
+      <wsdl:input message="tns:updateKgtHBSatinalmaKapatSoapIn" />
+      <wsdl:output message="tns:updateKgtHBSatinalmaKapatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getKPSKagitSatinalma">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Kağıt Hazır beton için tartımı yapılmış mal kabulleri alır</wsdl:documentation>
+      <wsdl:input message="tns:getKPSKagitSatinalmaSoapIn" />
+      <wsdl:output message="tns:getKPSKagitSatinalmaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateKPSKagitSatinalma">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Kağıt Hazır beton için mal kabulleri kaynak şirkete kaydeder</wsdl:documentation>
+      <wsdl:input message="tns:updateKPSKagitSatinalmaSoapIn" />
+      <wsdl:output message="tns:updateKPSKagitSatinalmaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SirketAc">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Axapata için şirket açma</wsdl:documentation>
+      <wsdl:input message="tns:SirketAcSoapIn" />
+      <wsdl:output message="tns:SirketAcSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateEkspertiz">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ekspertiz Mobil Uygulama için Mal kabül kayıtları</wsdl:documentation>
+      <wsdl:input message="tns:updateEkspertizSoapIn" />
+      <wsdl:output message="tns:updateEkspertizSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateGazBetonYuklemeOnayi">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gaz Beton Mobil Uygulama yükleme onayı</wsdl:documentation>
+      <wsdl:input message="tns:updateGazBetonYuklemeOnayiSoapIn" />
+      <wsdl:output message="tns:updateGazBetonYuklemeOnayiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="newRollProductionOperation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Bobin Üretim Bildirimi İşlemleri</wsdl:documentation>
+      <wsdl:input message="tns:newRollProductionOperationSoapIn" />
+      <wsdl:output message="tns:newRollProductionOperationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ShipmentExecutedOperation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Yükleme emrinin yürütülmesi</wsdl:documentation>
+      <wsdl:input message="tns:ShipmentExecutedOperationSoapIn" />
+      <wsdl:output message="tns:ShipmentExecutedOperationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReplenishmentOrderLineOperation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Stoğa üretim emirlerinin oluşturulması</wsdl:documentation>
+      <wsdl:input message="tns:ReplenishmentOrderLineOperationSoapIn" />
+      <wsdl:output message="tns:ReplenishmentOrderLineOperationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeRollCodeOperation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Upgrade/Downgrade operasyonları</wsdl:documentation>
+      <wsdl:input message="tns:ChangeRollCodeOperationSoapIn" />
+      <wsdl:output message="tns:ChangeRollCodeOperationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ScrapRollOperation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Scrap operasyonları</wsdl:documentation>
+      <wsdl:input message="tns:ScrapRollOperationSoapIn" />
+      <wsdl:output message="tns:ScrapRollOperationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreRollOperation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Store operasyonları</wsdl:documentation>
+      <wsdl:input message="tns:StoreRollOperationSoapIn" />
+      <wsdl:output message="tns:StoreRollOperationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ScrapJumboOperation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Scrap a jumbo reel operasyonları</wsdl:documentation>
+      <wsdl:input message="tns:ScrapJumboOperationSoapIn" />
+      <wsdl:output message="tns:ScrapJumboOperationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WarehouseRequestOperation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Wrehouse Request operasyonları</wsdl:documentation>
+      <wsdl:input message="tns:WarehouseRequestOperationSoapIn" />
+      <wsdl:output message="tns:WarehouseRequestOperationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WarehouseRequestRemovedOperation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Wrehouse Request Cancellation operasyonları</wsdl:documentation>
+      <wsdl:input message="tns:WarehouseRequestRemovedOperationSoapIn" />
+      <wsdl:output message="tns:WarehouseRequestRemovedOperationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListenMessageStsOperation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Listen Message Status GR_SPLAN_GDS_MESS table</wsdl:documentation>
+      <wsdl:input message="tns:ListenMessageStsOperationSoapIn" />
+      <wsdl:output message="tns:ListenMessageStsOperationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListenOutgoingOperation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Listen Message Status for OutgoingMessage table</wsdl:documentation>
+      <wsdl:input message="tns:ListenOutgoingOperationSoapIn" />
+      <wsdl:output message="tns:ListenOutgoingOperationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListenIncomingOperation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Listen Message Status IncomingMessage table</wsdl:documentation>
+      <wsdl:input message="tns:ListenIncomingOperationSoapIn" />
+      <wsdl:output message="tns:ListenIncomingOperationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QuantityChangeOperation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Quantity Change</wsdl:documentation>
+      <wsdl:input message="tns:QuantityChangeOperationSoapIn" />
+      <wsdl:output message="tns:QuantityChangeOperationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QualityCondOperation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">QualityCondOperation operasyonları</wsdl:documentation>
+      <wsdl:input message="tns:QualityCondOperationSoapIn" />
+      <wsdl:output message="tns:QualityCondOperationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TrendValueOperation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Test içindir</wsdl:documentation>
+      <wsdl:input message="tns:TrendValueOperationSoapIn" />
+      <wsdl:output message="tns:TrendValueOperationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setKgtTransfer">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Kağıt için Transfer işlemi için</wsdl:documentation>
+      <wsdl:input message="tns:setKgtTransferSoapIn" />
+      <wsdl:output message="tns:setKgtTransferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateTaseronOnay">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">KCS Taseron Mobil onaylama</wsdl:documentation>
+      <wsdl:input message="tns:updateTaseronOnaySoapIn" />
+      <wsdl:output message="tns:updateTaseronOnaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getEFaturalarUBL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gidecek faturayı xml haline getirerek sıkıştırır.</wsdl:documentation>
+      <wsdl:input message="tns:getEFaturalarUBLSoapIn" />
+      <wsdl:output message="tns:getEFaturalarUBLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getEdefter">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edefter gönderme uygulama metodu.</wsdl:documentation>
+      <wsdl:input message="tns:getEdefterSoapIn" />
+      <wsdl:output message="tns:getEdefterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getEArsivUBL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">E-Arşiv</wsdl:documentation>
+      <wsdl:input name="getEArsiv" message="tns:getEArsivSoapIn" />
+      <wsdl:output name="getEArsiv" message="tns:getEArsivSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCekler">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Axapta için EraySoft uygulamasındaki cekleri alır</wsdl:documentation>
+      <wsdl:input message="tns:getCeklerSoapIn" />
+      <wsdl:output message="tns:getCeklerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setCekStatu">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Axapta için EraySoft uygulamasındaki ceklerin statü günceller.</wsdl:documentation>
+      <wsdl:input message="tns:setCekStatuSoapIn" />
+      <wsdl:output message="tns:setCekStatuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getKCSMobilProfil">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Axapta KCS Mobil Ekran için Login işlemi.</wsdl:documentation>
+      <wsdl:input message="tns:getKCSMobilProfilSoapIn" />
+      <wsdl:output message="tns:getKCSMobilProfilSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getKCSMobilSiparis">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Axapta KCS Mobil Ekran için Açık Siparişleri alır..</wsdl:documentation>
+      <wsdl:input message="tns:getKCSMobilSiparisSoapIn" />
+      <wsdl:output message="tns:getKCSMobilSiparisSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getKCSMobilYukleme">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Axapta KCS Mobil Ekran için Yükleme Emirlerini alır..</wsdl:documentation>
+      <wsdl:input message="tns:getKCSMobilYuklemeSoapIn" />
+      <wsdl:output message="tns:getKCSMobilYuklemeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getKCSMobilGazYukleme">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Axapta KCS Mobil Ekran için Gaz Beton Yükleme Emirlerini alır..</wsdl:documentation>
+      <wsdl:input message="tns:getKCSMobilGazYuklemeSoapIn" />
+      <wsdl:output message="tns:getKCSMobilGazYuklemeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setKCSMobilYukleme">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Axapta KCS Mobil Ekran için Yeni/Düzelt/Sil işlemleri..</wsdl:documentation>
+      <wsdl:input message="tns:setKCSMobilYuklemeSoapIn" />
+      <wsdl:output message="tns:setKCSMobilYuklemeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setKCSMobilGazYukleme">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Axapta KCS Mobil Ekran için Gaz Beton Yeni/Düzelt/Sil işlemleri..</wsdl:documentation>
+      <wsdl:input message="tns:setKCSMobilGazYuklemeSoapIn" />
+      <wsdl:output message="tns:setKCSMobilGazYuklemeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setKCSMobilSifre">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Axapta KCS Mobil Ekran için Şifre günceller.</wsdl:documentation>
+      <wsdl:input message="tns:setKCSMobilSifreSoapIn" />
+      <wsdl:output message="tns:setKCSMobilSifreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setKCSMobilLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Axapta KCS Mobil Ekran için Giriş Logları yazar.</wsdl:documentation>
+      <wsdl:input message="tns:setKCSMobilLogSoapIn" />
+      <wsdl:output message="tns:setKCSMobilLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setTahsilat">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Axapta KCS Mobil Ekran için tahsilat girişi.</wsdl:documentation>
+      <wsdl:input message="tns:setTahsilatSoapIn" />
+      <wsdl:output message="tns:setTahsilatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBINListesi">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Axapta KCS Mobil Ekran için BIN kodu sorgulama.</wsdl:documentation>
+      <wsdl:input message="tns:getBINListesiSoapIn" />
+      <wsdl:output message="tns:getBINListesiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAxBakiyeler">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Axapta KCS Mobil Ekran için Müşteri Bakiyerini hesaplar.</wsdl:documentation>
+      <wsdl:input message="tns:getAxBakiyelerSoapIn" />
+      <wsdl:output message="tns:getAxBakiyelerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getIrsaliyeRaporu">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Axapta KCS Mobil Ekran için Irsaliye Raporu</wsdl:documentation>
+      <wsdl:input message="tns:getIrsaliyeRaporuSoapIn" />
+      <wsdl:output message="tns:getIrsaliyeRaporuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMusteriHareket">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Axapta KCS Mobil Ekran için Müşteri Hareketleri</wsdl:documentation>
+      <wsdl:input message="tns:getMusteriHareketSoapIn" />
+      <wsdl:output message="tns:getMusteriHareketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setKekYukseklik">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gaz Beton Kek Ölçer</wsdl:documentation>
+      <wsdl:input message="tns:setKekYukseklikSoapIn" />
+      <wsdl:output message="tns:setKekYukseklikSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setUzaklik">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Test Gaz Beton Kek Ölçer</wsdl:documentation>
+      <wsdl:input message="tns:setUzaklikSoapIn" />
+      <wsdl:output message="tns:setUzaklikSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUretimIsEmri">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Üretim Emirlerini alan Parametre</wsdl:documentation>
+      <wsdl:input message="tns:getUretimIsEmriSoapIn" />
+      <wsdl:output message="tns:getUretimIsEmriSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUretimSeriNo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Üretim Seri No</wsdl:documentation>
+      <wsdl:input message="tns:getUretimSeriNoSoapIn" />
+      <wsdl:output message="tns:getUretimSeriNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BobinTransferSarfet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Bobin Transferi Sarfet</wsdl:documentation>
+      <wsdl:input message="tns:BobinTransferSarfetSoapIn" />
+      <wsdl:output message="tns:BobinTransferSarfetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UretimTakipBaslangicveBitis">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Uretim Baslangic ve Bitis</wsdl:documentation>
+      <wsdl:input message="tns:UretimTakipBaslangicveBitisSoapIn" />
+      <wsdl:output message="tns:UretimTakipBaslangicveBitisSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AmbalajBarkodSatisSevkiyat">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ambalaj Satış</wsdl:documentation>
+      <wsdl:input message="tns:AmbalajBarkodSatisSevkiyatSoapIn" />
+      <wsdl:output message="tns:AmbalajBarkodSatisSevkiyatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BarkodpaletIslemleri">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Barkod Palet</wsdl:documentation>
+      <wsdl:input name="BarkodPaletIslemleri" message="tns:BarkodPaletIslemleriSoapIn" />
+      <wsdl:output name="BarkodPaletIslemleri" message="tns:BarkodPaletIslemleriSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DovizKurlariGuncelleme">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Kur Güncelleme</wsdl:documentation>
+      <wsdl:input name="DovizKurlari" message="tns:DovizKurlariSoapIn" />
+      <wsdl:output name="DovizKurlari" message="tns:DovizKurlariSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AxaptaWSSoap" type="tns:AxaptaWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="updateGiderPusulasi">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/updateGiderPusulasi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:updateGiderPusulasiKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTest">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/updateTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:updateTestKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHBParametre">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/getHBParametre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getHBParametreKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateHBSiparis">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/updateHBSiparis" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:updateHBSiparisKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateHBSiparisKapat">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/updateHBSiparisKapat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:updateHBSiparisKapatKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloAxapta">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/HelloAxapta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:HelloAxaptaKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateHBIrsaliye">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/updateHBIrsaliye" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:updateHBIrsaliyeKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteHBIrsaliye">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/deleteHBIrsaliye" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:deleteHBIrsaliyeKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateHBSarf">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/updateHBSarf" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:updateHBSarfKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateHBSatinalma">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/updateHBSatinalma" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:updateHBSatinalmaKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateHBTransfer">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/updateHBTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:updateHBTransferKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateHBSatinalmaYrd">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/updateHBSatinalmaYrd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:updateHBSatinalmaYrdKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateHBSatinalmaYrdKapat">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/updateHBSatinalmaYrdKapat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:updateHBSatinalmaYrdKapatKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getKgtHBSatinalma">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/getKgtHBSatinalma" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getKgtHBSatinalmaKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateKgtHBSatinalma">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/updateKgtHBSatinalma" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:updateKgtHBSatinalmaKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateKgtHBSatinalmaKapat">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/updateKgtHBSatinalmaKapat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:updateKgtHBSatinalmaKapatKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getKPSKagitSatinalma">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/getKPSKagitSatinalma" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getKPSKagitSatinalmaKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateKPSKagitSatinalma">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/updateKPSKagitSatinalma" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:updateKPSKagitSatinalmaKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SirketAc">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/SirketAc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SirketAcKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateEkspertiz">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/updateEkspertiz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:updateEkspertizKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateGazBetonYuklemeOnayi">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/updateGazBetonYuklemeOnayi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:updateGazBetonYuklemeOnayiKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newRollProductionOperation">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/newRollProductionOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:newRollProductionOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShipmentExecutedOperation">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/ShipmentExecutedOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ShipmentExecutedOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplenishmentOrderLineOperation">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/ReplenishmentOrderLineOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ReplenishmentOrderLineOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeRollCodeOperation">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/ChangeRollCodeOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ChangeRollCodeOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScrapRollOperation">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/ScrapRollOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ScrapRollOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StoreRollOperation">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/StoreRollOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:StoreRollOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScrapJumboOperation">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/ScrapJumboOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ScrapJumboOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WarehouseRequestOperation">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/WarehouseRequestOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:WarehouseRequestOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WarehouseRequestRemovedOperation">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/WarehouseRequestRemovedOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:WarehouseRequestRemovedOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListenMessageStsOperation">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/ListenMessageStsOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListenMessageStsOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListenOutgoingOperation">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/ListenOutgoingOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListenOutgoingOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListenIncomingOperation">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/ListenIncomingOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListenIncomingOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuantityChangeOperation">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/QuantityChangeOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QuantityChangeOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QualityCondOperation">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/QualityCondOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QualityCondOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TrendValueOperation">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/TrendValueOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:TrendValueOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setKgtTransfer">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/setKgtTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:setKgtTransferKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTaseronOnay">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/updateTaseronOnay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:updateTaseronOnayKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEFaturalarUBL">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/getEFaturalarUBL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getEFaturalarUBLKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEdefter">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/getEdefter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getEdefterKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEArsivUBL">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/getEArsiv" style="document" />
+      <wsdl:input name="getEArsiv">
+        <soap:body use="literal" />
+        <soap:header message="tns:getEArsivKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getEArsiv">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCekler">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/getCekler" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getCeklerKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setCekStatu">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/setCekStatu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:setCekStatuKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getKCSMobilProfil">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/getKCSMobilProfil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getKCSMobilProfilKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getKCSMobilSiparis">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/getKCSMobilSiparis" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getKCSMobilSiparisKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getKCSMobilYukleme">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/getKCSMobilYukleme" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getKCSMobilYuklemeKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getKCSMobilGazYukleme">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/getKCSMobilGazYukleme" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getKCSMobilGazYuklemeKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setKCSMobilYukleme">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/setKCSMobilYukleme" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:setKCSMobilYuklemeKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setKCSMobilGazYukleme">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/setKCSMobilGazYukleme" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:setKCSMobilGazYuklemeKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setKCSMobilSifre">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/setKCSMobilSifre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:setKCSMobilSifreKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setKCSMobilLog">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/setKCSMobilLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:setKCSMobilLogKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTahsilat">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/setTahsilat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:setTahsilatKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBINListesi">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/getBINListesi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getBINListesiKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAxBakiyeler">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/getAxBakiyeler" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getAxBakiyelerKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getIrsaliyeRaporu">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/getIrsaliyeRaporu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getIrsaliyeRaporuKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMusteriHareket">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/getMusteriHareket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getMusteriHareketKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setKekYukseklik">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/setKekYukseklik" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:setKekYukseklikKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setUzaklik">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/setUzaklik" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:setUzaklikKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUretimIsEmri">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/getUretimIsEmri" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getUretimIsEmriKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUretimSeriNo">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/getUretimSeriNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getUretimSeriNoKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BobinTransferSarfet">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/BobinTransferSarfet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BobinTransferSarfetKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UretimTakipBaslangicveBitis">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/UretimTakipBaslangicveBitis" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UretimTakipBaslangicveBitisKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AmbalajBarkodSatisSevkiyat">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/AmbalajBarkodSatisSevkiyat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AmbalajBarkodSatisSevkiyatKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BarkodpaletIslemleri">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/BarkodPaletIslemleri" style="document" />
+      <wsdl:input name="BarkodPaletIslemleri">
+        <soap:body use="literal" />
+        <soap:header message="tns:BarkodPaletIslemleriKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="BarkodPaletIslemleri">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DovizKurlariGuncelleme">
+      <soap:operation soapAction="http://axaptaws.kipasgroup.com/DovizKurlari" style="document" />
+      <wsdl:input name="DovizKurlari">
+        <soap:body use="literal" />
+        <soap:header message="tns:DovizKurlariKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DovizKurlari">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AxaptaWSSoap12" type="tns:AxaptaWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="updateGiderPusulasi">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/updateGiderPusulasi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updateGiderPusulasiKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTest">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/updateTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updateTestKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHBParametre">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/getHBParametre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getHBParametreKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateHBSiparis">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/updateHBSiparis" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updateHBSiparisKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateHBSiparisKapat">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/updateHBSiparisKapat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updateHBSiparisKapatKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloAxapta">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/HelloAxapta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:HelloAxaptaKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateHBIrsaliye">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/updateHBIrsaliye" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updateHBIrsaliyeKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteHBIrsaliye">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/deleteHBIrsaliye" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:deleteHBIrsaliyeKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateHBSarf">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/updateHBSarf" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updateHBSarfKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateHBSatinalma">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/updateHBSatinalma" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updateHBSatinalmaKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateHBTransfer">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/updateHBTransfer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updateHBTransferKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateHBSatinalmaYrd">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/updateHBSatinalmaYrd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updateHBSatinalmaYrdKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateHBSatinalmaYrdKapat">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/updateHBSatinalmaYrdKapat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updateHBSatinalmaYrdKapatKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getKgtHBSatinalma">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/getKgtHBSatinalma" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getKgtHBSatinalmaKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateKgtHBSatinalma">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/updateKgtHBSatinalma" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updateKgtHBSatinalmaKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateKgtHBSatinalmaKapat">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/updateKgtHBSatinalmaKapat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updateKgtHBSatinalmaKapatKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getKPSKagitSatinalma">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/getKPSKagitSatinalma" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getKPSKagitSatinalmaKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateKPSKagitSatinalma">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/updateKPSKagitSatinalma" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updateKPSKagitSatinalmaKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SirketAc">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/SirketAc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SirketAcKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateEkspertiz">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/updateEkspertiz" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updateEkspertizKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateGazBetonYuklemeOnayi">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/updateGazBetonYuklemeOnayi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updateGazBetonYuklemeOnayiKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newRollProductionOperation">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/newRollProductionOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:newRollProductionOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShipmentExecutedOperation">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/ShipmentExecutedOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ShipmentExecutedOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplenishmentOrderLineOperation">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/ReplenishmentOrderLineOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ReplenishmentOrderLineOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeRollCodeOperation">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/ChangeRollCodeOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ChangeRollCodeOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScrapRollOperation">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/ScrapRollOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ScrapRollOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StoreRollOperation">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/StoreRollOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:StoreRollOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScrapJumboOperation">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/ScrapJumboOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ScrapJumboOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WarehouseRequestOperation">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/WarehouseRequestOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:WarehouseRequestOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WarehouseRequestRemovedOperation">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/WarehouseRequestRemovedOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:WarehouseRequestRemovedOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListenMessageStsOperation">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/ListenMessageStsOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListenMessageStsOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListenOutgoingOperation">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/ListenOutgoingOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListenOutgoingOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListenIncomingOperation">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/ListenIncomingOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListenIncomingOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuantityChangeOperation">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/QuantityChangeOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QuantityChangeOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QualityCondOperation">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/QualityCondOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QualityCondOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TrendValueOperation">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/TrendValueOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TrendValueOperationKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setKgtTransfer">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/setKgtTransfer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:setKgtTransferKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTaseronOnay">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/updateTaseronOnay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updateTaseronOnayKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEFaturalarUBL">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/getEFaturalarUBL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getEFaturalarUBLKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEdefter">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/getEdefter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getEdefterKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEArsivUBL">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/getEArsiv" style="document" />
+      <wsdl:input name="getEArsiv">
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getEArsivKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getEArsiv">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCekler">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/getCekler" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getCeklerKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setCekStatu">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/setCekStatu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:setCekStatuKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getKCSMobilProfil">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/getKCSMobilProfil" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getKCSMobilProfilKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getKCSMobilSiparis">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/getKCSMobilSiparis" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getKCSMobilSiparisKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getKCSMobilYukleme">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/getKCSMobilYukleme" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getKCSMobilYuklemeKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getKCSMobilGazYukleme">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/getKCSMobilGazYukleme" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getKCSMobilGazYuklemeKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setKCSMobilYukleme">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/setKCSMobilYukleme" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:setKCSMobilYuklemeKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setKCSMobilGazYukleme">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/setKCSMobilGazYukleme" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:setKCSMobilGazYuklemeKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setKCSMobilSifre">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/setKCSMobilSifre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:setKCSMobilSifreKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setKCSMobilLog">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/setKCSMobilLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:setKCSMobilLogKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTahsilat">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/setTahsilat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:setTahsilatKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBINListesi">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/getBINListesi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getBINListesiKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAxBakiyeler">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/getAxBakiyeler" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getAxBakiyelerKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getIrsaliyeRaporu">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/getIrsaliyeRaporu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getIrsaliyeRaporuKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMusteriHareket">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/getMusteriHareket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getMusteriHareketKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setKekYukseklik">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/setKekYukseklik" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:setKekYukseklikKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setUzaklik">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/setUzaklik" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:setUzaklikKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUretimIsEmri">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/getUretimIsEmri" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getUretimIsEmriKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUretimSeriNo">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/getUretimSeriNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getUretimSeriNoKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BobinTransferSarfet">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/BobinTransferSarfet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BobinTransferSarfetKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UretimTakipBaslangicveBitis">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/UretimTakipBaslangicveBitis" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UretimTakipBaslangicveBitisKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AmbalajBarkodSatisSevkiyat">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/AmbalajBarkodSatisSevkiyat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AmbalajBarkodSatisSevkiyatKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BarkodpaletIslemleri">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/BarkodPaletIslemleri" style="document" />
+      <wsdl:input name="BarkodPaletIslemleri">
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BarkodPaletIslemleriKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="BarkodPaletIslemleri">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DovizKurlariGuncelleme">
+      <soap12:operation soapAction="http://axaptaws.kipasgroup.com/DovizKurlari" style="document" />
+      <wsdl:input name="DovizKurlari">
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DovizKurlariKullanici" part="Kullanici" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DovizKurlari">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AxaptaWS">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Axapta Web Service</wsdl:documentation>
+    <wsdl:port name="AxaptaWSSoap" binding="tns:AxaptaWSSoap">
+      <soap:address location="http://axsql:8087/AxaptaWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AxaptaWSSoap12" binding="tns:AxaptaWSSoap12">
+      <soap12:address location="http://axsql:8087/AxaptaWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

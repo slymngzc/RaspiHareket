@@ -102,6 +102,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="Properties\ServiceReferences.Designer.ClientConfig" />
     <None Include="RaspiHareket_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +139,13 @@
       <Project>{8550aea1-66b2-4cb5-8542-4d624c72de09}</Project>
       <Name>MovementPin</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SQliteAccessLayer\SQliteAccessLayer.csproj">
+      <Project>{e5823889-c845-4f81-bb80-f1f85f3b4ba2}</Project>
+      <Name>SQliteAccessLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '15.0' ">
     <VisualStudioVersion>15.0</VisualStudioVersion>
