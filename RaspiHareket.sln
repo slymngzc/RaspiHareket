@@ -1,15 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaspiHareket", "RaspiHareket\RaspiHareket.csproj", "{7A64D6FB-5E04-43AD-8461-537209DA35EF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementPin", "MovementPin\MovementPin.csproj", "{8550AEA1-66B2-4CB5-8542-4D624C72DE09}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQliteAccessLayer", "SQliteAccessLayer\SQliteAccessLayer.csproj", "{E5823889-C845-4F81-BB80-F1F85F3B4BA2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITestApp", "UITestApp\UITestApp.csproj", "{D1CC1A39-39CA-4F91-B25A-102A2160D7C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,28 +73,11 @@ Global
 		{E5823889-C845-4F81-BB80-F1F85F3B4BA2}.Release|x64.Build.0 = Release|x64
 		{E5823889-C845-4F81-BB80-F1F85F3B4BA2}.Release|x86.ActiveCfg = Release|x86
 		{E5823889-C845-4F81-BB80-F1F85F3B4BA2}.Release|x86.Build.0 = Release|x86
-		{D1CC1A39-39CA-4F91-B25A-102A2160D7C1}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{D1CC1A39-39CA-4F91-B25A-102A2160D7C1}.Debug|ARM.ActiveCfg = Debug|ARM
-		{D1CC1A39-39CA-4F91-B25A-102A2160D7C1}.Debug|ARM.Build.0 = Debug|ARM
-		{D1CC1A39-39CA-4F91-B25A-102A2160D7C1}.Debug|ARM.Deploy.0 = Debug|ARM
-		{D1CC1A39-39CA-4F91-B25A-102A2160D7C1}.Debug|x64.ActiveCfg = Debug|x64
-		{D1CC1A39-39CA-4F91-B25A-102A2160D7C1}.Debug|x64.Build.0 = Debug|x64
-		{D1CC1A39-39CA-4F91-B25A-102A2160D7C1}.Debug|x64.Deploy.0 = Debug|x64
-		{D1CC1A39-39CA-4F91-B25A-102A2160D7C1}.Debug|x86.ActiveCfg = Debug|x86
-		{D1CC1A39-39CA-4F91-B25A-102A2160D7C1}.Debug|x86.Build.0 = Debug|x86
-		{D1CC1A39-39CA-4F91-B25A-102A2160D7C1}.Debug|x86.Deploy.0 = Debug|x86
-		{D1CC1A39-39CA-4F91-B25A-102A2160D7C1}.Release|Any CPU.ActiveCfg = Release|x86
-		{D1CC1A39-39CA-4F91-B25A-102A2160D7C1}.Release|ARM.ActiveCfg = Release|ARM
-		{D1CC1A39-39CA-4F91-B25A-102A2160D7C1}.Release|ARM.Build.0 = Release|ARM
-		{D1CC1A39-39CA-4F91-B25A-102A2160D7C1}.Release|ARM.Deploy.0 = Release|ARM
-		{D1CC1A39-39CA-4F91-B25A-102A2160D7C1}.Release|x64.ActiveCfg = Release|x64
-		{D1CC1A39-39CA-4F91-B25A-102A2160D7C1}.Release|x64.Build.0 = Release|x64
-		{D1CC1A39-39CA-4F91-B25A-102A2160D7C1}.Release|x64.Deploy.0 = Release|x64
-		{D1CC1A39-39CA-4F91-B25A-102A2160D7C1}.Release|x86.ActiveCfg = Release|x86
-		{D1CC1A39-39CA-4F91-B25A-102A2160D7C1}.Release|x86.Build.0 = Release|x86
-		{D1CC1A39-39CA-4F91-B25A-102A2160D7C1}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FAA1CFAA-8115-41C3-AB54-3201FA69CABF}
 	EndGlobalSection
 EndGlobal
