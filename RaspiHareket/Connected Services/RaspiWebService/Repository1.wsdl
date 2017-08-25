@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Repository" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.128.2/Repository.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.128.2/Repository.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.128.2/Repository.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RaspiWebService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IRepository_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IRepository_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRepository_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IRepository_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRepository_AddValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddValue" />
+  </wsdl:message>
+  <wsdl:message name="IRepository_AddValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRepository_GetValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetValue" />
+  </wsdl:message>
+  <wsdl:message name="IRepository_GetValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRepository_GetAppSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppSettings" />
+  </wsdl:message>
+  <wsdl:message name="IRepository_GetAppSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppSettingsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IRepository">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRepository/GetData" message="tns:IRepository_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRepository/GetDataResponse" message="tns:IRepository_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRepository/GetDataUsingDataContract" message="tns:IRepository_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRepository/GetDataUsingDataContractResponse" message="tns:IRepository_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRepository/AddValue" message="tns:IRepository_AddValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRepository/AddValueResponse" message="tns:IRepository_AddValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRepository/GetValue" message="tns:IRepository_GetValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRepository/GetValueResponse" message="tns:IRepository_GetValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppSettings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRepository/GetAppSettings" message="tns:IRepository_GetAppSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRepository/GetAppSettingsResponse" message="tns:IRepository_GetAppSettings_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IRepository" type="tns:IRepository">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IRepository/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IRepository/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddValue">
+      <soap:operation soapAction="http://tempuri.org/IRepository/AddValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValue">
+      <soap:operation soapAction="http://tempuri.org/IRepository/GetValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppSettings">
+      <soap:operation soapAction="http://tempuri.org/IRepository/GetAppSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Repository">
+    <wsdl:port name="BasicHttpBinding_IRepository" binding="tns:BasicHttpBinding_IRepository">
+      <soap:address location="http://192.168.128.2/Repository.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

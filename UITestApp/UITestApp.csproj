@@ -96,11 +96,6 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppCode\FileAccessAppCode.cs" />
-    <Compile Include="Connected Services\AxWs\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -110,72 +105,10 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="Connected Services\AxWs\AxaptaWS.wsdl" />
-    <None Include="Connected Services\AxWs\UITestApp.AxWs.AxaptaSonucObject.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\AxWs\UITestApp.AxWs.BarkodPaletIslemleri1.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\AxWs\UITestApp.AxWs.DovizKurlari1.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\AxWs\UITestApp.AxWs.getEArsiv1.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\AxWs\UITestApp.AxWs.getHBParametreResponseGetHBParametreResult.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\AxWs\UITestApp.AxWs.getUretimIsEmriResponseGetUretimIsEmriResult.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\AxWs\UITestApp.AxWs.getUretimSeriNoResponseGetUretimSeriNoResult.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\AxWs\UITestApp.AxWs.GiderAxGelenObject.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\AxWs\UITestApp.AxWs.HBKgtSatinalma.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\AxWs\UITestApp.AxWs.KCSKantarObject.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\AxWs\UITestApp.AxWs.KCSMobilSatisBakiyelerObject.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\AxWs\UITestApp.AxWs.KCSMobilSatisGazYukObjects.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\AxWs\UITestApp.AxWs.KCSMobilSatisIrsaliyeRaporObjects.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\AxWs\UITestApp.AxWs.KCSMobilSatisMusteriHareketleri.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\AxWs\UITestApp.AxWs.KCSMobilSatisObject.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\AxWs\UITestApp.AxWs.KCSMobilSatisSipObject.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\AxWs\UITestApp.AxWs.KCSMobilSatisYukObjects.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\AxWs\UITestApp.AxWs.PaymentStatusObject.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Properties\ServiceReferences.Designer.ClientConfig" />
     <None Include="UITestApp_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\AxWs\AxaptaWS.disco" />
-    <None Include="Connected Services\AxWs\configuration91.svcinfo" />
-    <None Include="Connected Services\AxWs\configuration.svcinfo" />
-    <None Include="Connected Services\AxWs\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -213,9 +146,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\AxWs\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

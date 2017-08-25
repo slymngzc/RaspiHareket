@@ -95,6 +95,11 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\RaspiWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="StartupTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -102,10 +107,33 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="Connected Services\RaspiWebService\RaspiHareket.RaspiWebService.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RaspiWebService\RaspiHareket.RaspiWebService.KeyValueObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RaspiWebService\Repository1.wsdl" />
+    <None Include="Connected Services\RaspiWebService\Repository3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RaspiWebService\Repository31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RaspiWebService\Repository32.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\ServiceReferences.Designer.ClientConfig" />
     <None Include="RaspiHareket_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\RaspiWebService\configuration91.svcinfo" />
+    <None Include="Connected Services\RaspiWebService\configuration.svcinfo" />
+    <None Include="Connected Services\RaspiWebService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\RaspiWebService\Repository1.disco" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png">
       <InProject>false</InProject>
@@ -146,6 +174,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\RaspiWebService\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '15.0' ">
     <VisualStudioVersion>15.0</VisualStudioVersion>

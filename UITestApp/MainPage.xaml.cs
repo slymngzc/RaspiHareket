@@ -45,7 +45,7 @@ namespace UITestApp
             timer.Interval = TimeSpan.FromMilliseconds(400);
             timer.Tick += Timer_Tick;
             if (pinEcho != null & pinTrigger != null)
-{
+            {
                 timer.Start();
             }
         }
